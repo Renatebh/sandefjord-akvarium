@@ -1,0 +1,543 @@
+:root {
+  --text: #fff;
+  --box-shadow-dark: 0px 2px 8px 0px var(--dark);
+  --box-shadow-light: 0px 2px 8px 0px var(--text);
+  --text-shadow: 1px 1px #333;
+  --secondary: #40e0d0;
+  --primary: #191970;
+  --light: #6fa3ff;
+  --sea-green: #008080;
+  --dark: #1e2222;
+  --border: darkgray;
+  --gradient: linear-gradient(
+    #191970,
+    #40e0d0,
+    #344b4b,
+    #2e3f3f,
+    #253838,
+    #1e2222
+  );
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 370vh;
+  font-size: 1.125em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: var(--gradient);
+  background-size: cover;
+
+   background-size: 300% 300%;
+  animation: bg-animation 60s infinite alternate;
+}
+
+
+@keyframes bg-animation {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Her er griden */
+.wrapper {
+  gap: 5px;
+  display: grid;
+  grid-template-columns: 1em 1fr 1em;
+  grid-template-rows: 5% 5% 6% 5% 5% 5% 5% 7% 24% 11%;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    ". content-1 ."
+    ". content-2 ."
+    ". content-3 ."
+    ". content-4 ."
+    ". content-5 ."
+    ". content-6 ."
+    ". sidebar ."
+    ". footer .";
+}
+
+.content-1 {
+  grid-area: content-1;
+}
+.content-2 {
+  grid-area: content-2;
+}
+.content-3 {
+  grid-area: content-3;
+}
+.content-4 {
+  grid-area: content-4;
+}
+.content-5 {
+  grid-area: content-5;
+}
+.content-6 {
+  grid-area: content-6;
+}
+
+/* Her begynner headeren */
+.header {
+  grid-area: header;
+  color: var(--text);
+  background-color: var(--primary);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  box-shadow: 0px 0px 40px 40px var(--primary);
+}
+
+.header p {
+  position: absolute;
+  left: 4.2em;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  top: 0.3em;
+  left: 0.1em;
+  padding: 10px 20px;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--primary);
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-shadow: var(--text-shadow);
+  color: var(--text);
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: var(--light);
+}
+
+/* meny */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* meny icon */
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .nav-icon {
+  background: var(--text);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .nav-icon:before,
+.header .menu-icon .nav-icon:after {
+  background: var(--text);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .nav-icon:before {
+  top: 5px;
+}
+
+.header .menu-icon .nav-icon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* Her starter Main + content 1-6*/
+main {
+  grid-area: main;
+  text-shadow: var(--text-shadow);
+}
+
+.nav-main ul {
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  width: 80%;
+  padding: 0.3em;
+  font-size: 1em;
+  margin-top: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-dark);
+  color: var(--text);
+  text-shadow: var(--text-shadow);
+  background-color: var(--light);
+}
+
+.date-btn {
+  background-color: var(--primary);
+}
+
+.btn:hover {
+  transform: scale(1.06);
+  box-shadow: var(--box-shadow-light);
+}
+
+.chart-btn:hover {
+  background-color: var(--primary);
+}
+
+.fa-calendar-week,
+.fa-shopping-cart,
+.fa-credit-card,
+.fa-bars {
+  margin-right: 5px;
+}
+
+main a {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--text);
+}
+
+main a:hover {
+  color: var(--sea-green);
+}
+
+main li:hover {
+  text-decoration: underline;
+}
+
+.content-1,
+.content-6 {
+  text-align: center;
+}
+
+main,
+.content-1,
+.content-2,
+.content-3,
+.content-4,
+.content-5 {
+  color: var(--text);
+  border-bottom: 2px solid darkgray;
+  text-shadow: var(--text-shadow);
+}
+
+.ticket-box h3 {
+  font-size: 1.5em;
+  margin: 10px 0 0 20px;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+.btn-box p {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#btn-middle {
+  padding: 0em;
+  width: 2.5em;
+  height: 2.22em;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.count {
+  padding: 0.5em;
+  width: 3em;
+  border: none;
+  height: 3em;
+  cursor: pointer;
+  background-color: var(--text);
+  color: rgb(114, 113, 113);
+}
+
+.btn-left {
+  border-right: 2px solid var(--border);
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+.btn-right {
+  border-left: 2px solid var(--border);
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+/* her begynner sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--primary);
+  box-shadow: var(--box-shadow-dark);
+  border-radius: 1em;
+}
+
+.sidebar-txt {
+  margin-bottom: 30px;
+  width: 60%;
+}
+
+.sidebar-txt h3 {
+  text-shadow: var(--text-shadow);
+}
+
+form {
+  color: var(--text);
+  margin: 50px;
+  font-size: 15px;
+  height: 100vh;
+}
+
+input[type="checkbox"] {
+  transform: scale(2.3);
+  margin: 10px;
+}
+
+.check {
+  margin: 20px 0px;
+  width: 60%;
+}
+
+.form-btn {
+  width: 15em;
+  height: 2.4em;
+  border-radius: 0.3em;
+  border: none;
+  background-color: var(--secondary);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text);
+  box-shadow: var(--box-shadow-dark);
+  text-shadow: var(--text-shadow);
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  box-shadow: var(--box-shadow-light);
+  transform: scale(1.05);
+  background-color: var(--light);
+  transition: 0.5s;
+}
+
+.form-controll {
+  width: 15em;
+  height: 2.4em;
+  margin: 10px 0;
+  border-radius: 0.3em;
+  border: none;
+}
+
+/* Her begynner footer */
+footer {
+  background-color: var(--dark);
+  grid-area: footer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+}
+
+.somelogoes-box {
+  /* height: 12em; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.somelogoes-header {
+  font-size: 1em;
+  width: 85%;
+  text-align: center;
+  color: var(--text);
+}
+
+.somelogoes i {
+  margin: 1rem;
+  color: var(--secondary);
+}
+
+.somelogoes p {
+  color: var(--secondary);
+  font-size: 0.6em;
+}
+
+.somelogoes i:hover {
+  transform: scale(1.09);
+  color: var(--text);
+}
+
+.footer-links {
+  margin-top: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.links-header {
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.footer-links ul li {
+  margin: 10px;
+  font-size: 15px;
+}
+
+.links-header,
+.footer-links li a {
+  color: var(--secondary);
+}
+
+.footer-links li a:hover {
+  color: var(--text);
+}
+
+small {
+  text-align: center;
+  color: var(--text);
+  padding-top: 2em;
+}
+
+/* MEDIA QUARRIES */
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    gap: 10px;
+    grid-template-columns: 3% repeat(3, 1fr) 3%;
+    grid-template-rows: 13% 10% 10% 10% 10% 10% 19%;
+    grid-template-areas:
+      "header header header header header"
+      ". main main sidebar ."
+      ". content-1 content-1 sidebar."
+      ". content-2 content-3 sidebar."
+      ". content-4 content-5 sidebar ."
+      ". content-6 content-6 sidebar ."
+      ". footer footer footer .";
+  }
+  body {
+    min-height: 235vh;
+  }
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+  .header {
+    box-shadow: 0px 0px 40px 40px var(--primary);
+  }
+  .sidebar-txt {
+    width: 100%;
+  }
+  .check {
+    margin: 20px 0px;
+    width: 100%;
+  }
+  .btn-box {
+    margin: 0;
+  }
+  .ticket-box h3 {
+    margin: 1%;
+  }
+  main {
+    border-bottom: 2px solid var(--border);
+  }
+  .content-1 {
+    border-bottom: 2px solid var(--border);
+  }
+  .somelogoes-box i {
+    margin: 0 2rem;
+  }
+  .somelogoes p {
+    font-size: 0.9em;
+  }
+  .footer-links ul li {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    gap: 20px;
+    grid-template-columns: 5% repeat(3, 1fr) 5%;
+    grid-template-rows: 13% 10% 10% 10% 10% 10% 19%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 10% repeat(3, 1fr) 10%;
+  }
+}

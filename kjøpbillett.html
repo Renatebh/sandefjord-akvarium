@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kjøp billett</title>
+    <link rel="stylesheet" href="css/kjøpebillett.css" />
+    <link rel="icon" type="image.png" href="img/logo640.png">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <p>Sandefjord Akvarium</p>
+        <a href="#"
+          ><img class="logo" src="img/logo640.png" alt="bildet av logoen"
+        /></a>
+
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"
+          ><span class="nav-icon"></span
+        ></label>
+        <ul class="menu">
+          <li><a href="index.html">Forsiden</a></li>
+          <li><a href="kjøpbillett.html">Kjøp billett</a></li>
+          <li><a href="kontakt.html">Kontakt oss</a></li>
+        </ul>
+      </header>
+
+      <main>
+        <div class="nav-main">
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-bars"></i>Meny</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-shopping-cart"></i>Handlekurv</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-credit-card"></i>Betaling</a>
+            </li>
+          </ul>
+          <a href=""
+            ><button class="chart-btn btn">
+              <i class="fas fa-shopping-cart"></i>Legg til i handlekurv
+            </button></a
+          >
+        </div>
+      </main>
+
+      <div class="content-1">
+        <div class="date-box">
+          <h3>Entrébilletter</h3>
+        </div>
+        <a href="#"
+          ><button class="date-btn btn">
+            <i class="fas fa-calendar-week"></i>Velg dato for billetter
+          </button></a
+        >
+      </div>
+
+      <div class="content-2">
+        <div class="ticket-box">
+          <h3>Barn</h3>
+
+          <div class="btn-box">
+            <p>NOK 49,00</p>
+            <button class="count btn-left">
+              <i class="fas fa-minus"></i>
+            </button>
+            <input id="btn-middle" type="text" placeholder="0" />
+            <button class="count btn-right">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="content-3">
+        <div class="ticket-box">
+          <h3>Ungdom</h3>
+
+          <div class="btn-box">
+            <p>NOK 79,00</p>
+            <button class="count btn-left">
+              <i class="fas fa-minus"></i>
+            </button>
+            <input id="btn-middle" type="text" placeholder="0" />
+            <button class="count btn-right">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="content-4">
+        <div class="ticket-box">
+          <h3>Voksen</h3>
+
+          <div class="btn-box">
+            <p>NOK 99,00</p>
+
+            <button class="count btn-left">
+              <i class="fas fa-minus"></i>
+            </button>
+            <input id="btn-middle" type="text" placeholder="0" />
+            <button class="count btn-right">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="content-5">
+        <div class="ticket-box">
+          <h3>Sesong</h3>
+
+          <div class="btn-box">
+            <p>NOK 999,00</p>
+
+            <button class="count btn-left">
+              <i class="fas fa-minus"></i>
+            </button>
+            <input id="btn-middle" type="text" placeholder="0" />
+            <button class="count btn-right">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="content-6">
+        <h3>Bestill her</h3>
+
+        <a href="#"
+          ><button class="chart-btn btn">
+            <i class="fas fa-shopping-cart"></i>Legg til i handlekurv
+          </button></a
+        >
+      </div>
+      <!-- Her starter sidebaren -->
+      <div class="sidebar">
+        <form>
+          <div class="sidebar-txt">
+            <h3>Få nyhetsbrev på mail i dag.</h3>
+            <p>Register din e-post å gå ikke glipp av rabatter og nyheter</p>
+          </div>
+
+          <label for="email">E-mail</label><br />
+          <input
+            type="text"
+            class="form-controll"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <br />
+
+          <label for="firstname">Navn</label><br />
+          <input
+            type="text"
+            class="form-controll"
+            name="firstname"
+            placeholder="Navn"
+            required
+          /><br />
+          <label for="lastname">Etternavn</label><br />
+          <input
+            type="text"
+            class="form-controll"
+            name="lastname"
+            placeholder="Etternavn"
+            required
+          />
+          <div class="check">
+            <input type="checkbox" name="check" value="check" />
+            <label for="check"
+              >Ja, jeg vil gjerne mota mail med informasjon og tilbud fra
+              Sandefjord Akvarium. Jeg har lest og forstått erklaringen. </label
+            ><br />
+          </div>
+          <input class="form-btn" type="submit" value="Send" />
+        </form>
+      </div>
+
+      <footer>
+        <h4 class="somelogoes-header">
+          Følg oss på sosiale-medier og få med deg alt det nye som skjer i vårt
+          akvarium
+        </h4>
+        <div class="somelogoes-box">
+          <div class="somelogoes">
+            <a href=""><i class="fab fa-instagram fa-4x"></i></a>
+            <p>Instagram</p>
+          </div>
+          <div class="somelogoes">
+            <a href=""><i class="fab fa-facebook fa-4x"></i></a>
+            <p>Facebook</p>
+          </div>
+          <div class="somelogoes">
+            <a href=""><i class="fab fa-twitter-square fa-4x"></i></a>
+            <p>Twitter</p>
+          </div>
+          <div class="somelogoes">
+            <a href=""><i class="fab fa-youtube-square fa-4x"></i></a>
+            <p>YouTube</p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li class="links-header">Nyheter</li>
+            <li><a href="">Sjøløve-show</a></li>
+            <li><a href="">Sesongkort</a></li>
+            <li><a href="">Nye Fisker</a></li>
+          </ul>
+
+          <ul>
+            <li class="links-header">Opplevelser</li>
+            <li><a href="">Sjøløve-show</a></li>
+            <li><a href="">Svøm med hai</a></li>
+            <li><a href="">Burdag hos oss</a></li>
+            <li><a href="">Fiskefødsler</a></li>
+            <li><a href="">Livet i havet</a></li>
+          </ul>
+
+          <ul>
+            <li class="links-header">Billetter</li>
+            <li><a href="">Dagsbillett</a></li>
+            <li><a href="">Sesongkort</a></li>
+            <li><a href="">Rabatter</a></li>
+          </ul>
+
+          <ul>
+            <li class="links-header">Støtt oss</li>
+            <li><a href="">Donasjoner</a></li>
+            <li><a href="">Støt dyrene</a></li>
+            <li><a href="">Støt havet</a></li>
+            <li><a href="">Bekjemp plastikk</a></li>
+            <li><a href=""></a></li>
+          </ul>
+        </div>
+        <small>Copyright 2021</small>
+      </footer>
+    </div>
+  </body>
+</html>
